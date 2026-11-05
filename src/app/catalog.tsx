@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { ArrowDownRight, ArrowUpRight, BookOpen, CalendarDays, ChevronLeft, ChevronRight, ExternalLink, FileText, Search, Star, X } from "lucide-react";
 import { formatDate } from "@/lib/format";
@@ -54,27 +54,43 @@ function Status({ status }: { status: Book["status"] }) {
 }
 
 function Details({ book, index, due, onClose }: { book: Book; index: number; due?: PublicBorrowStatus; onClose: () => void }) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
   useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
     const previousOverflow = document.body.style.overflow;
+    const handleClose = () => onClose();
     document.body.style.overflow = "hidden";
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleKeyDown);
+    dialog.addEventListener("close", handleClose);
+    if (!dialog.open) dialog.showModal();
 
     return () => {
+      dialog.removeEventListener("close", handleClose);
       document.body.style.overflow = previousOverflow;
-      document.removeEventListener("keydown", handleKeyDown);
     };
   }, [onClose]);
 
   return createPortal(
-    <div className="book-details-backdrop fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[#122031]/55 p-2 pt-[max(0.5rem,env(safe-area-inset-top))] backdrop-blur-sm sm:p-4" onClick={onClose}>
-      <section role="dialog" aria-modal="true" aria-labelledby="book-title" className="book-details-dialog my-auto flex w-full max-w-2xl min-w-0 flex-col overflow-hidden rounded-2xl bg-[#fbfaf6] p-3 shadow-2xl sm:p-6" onClick={(event) => event.stopPropagation()}>
+    <dialog
+      ref={dialogRef}
+      className="book-details-backdrop"
+      aria-modal="true"
+      aria-labelledby="book-title"
+      onCancel={(event) => {
+        event.preventDefault();
+        onClose();
+      }}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <section className="book-details-dialog flex w-full max-w-2xl min-w-0 flex-col overflow-hidden rounded-2xl bg-[#fbfaf6] p-3 shadow-2xl sm:p-6">
         <div className="flex shrink-0 justify-end">
           <button onClick={onClose} aria-label="Close book details" className="rounded-full p-2 text-[#647184] hover:bg-[#ece9e1]"><X size={18} /></button>
         </div>
-        <div className="min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-contain">
+        <div className="book-details-content min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-contain">
         <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:gap-7">
         <div className="flex min-w-0 justify-center sm:justify-start"><BookCover book={book} index={index} large /></div>
         <div className="min-w-0 break-words pb-1 sm:pr-1 sm:pt-2">
@@ -101,7 +117,7 @@ function Details({ book, index, due, onClose }: { book: Book; index: number; due
         </div>
         </div>
       </section>
-    </div>,
+    </dialog>,
     document.body,
   );
 }
@@ -114,6 +130,7 @@ export default function Catalog({ initialBooks = [] }: { initialBooks?: Book[] }
   const [page, setPage] = useState(1);
   const [borrowStatus, setBorrowStatus] = useState<PublicBorrowStatus[]>([]);
   const [selected, setSelected] = useState<Book | null>(null);
+  const closeDetails = useCallback(() => setSelected(null), []);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const load = useCallback(async (search: string) => {
@@ -257,7 +274,7 @@ export default function Catalog({ initialBooks = [] }: { initialBooks?: Book[] }
         </nav>}
         </>
       )}
-      {selected && <Details book={selected} index={books.findIndex((book) => book.id === selected.id)} due={dueByBook.get(selected.id)} onClose={() => setSelected(null)} />}
+      {selected && <Details book={selected} index={books.findIndex((book) => book.id === selected.id)} due={dueByBook.get(selected.id)} onClose={closeDetails} />}
     </>
   );
 }

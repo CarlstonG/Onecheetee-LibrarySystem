@@ -49,7 +49,7 @@ export default async function DashboardLayout({ children }: LayoutProps<"/dashbo
       <main className="min-w-0">
         <header className="flex items-center justify-between border-b border-[#e7e4dc] bg-[#fbfaf6] px-5 py-3 lg:hidden">
           <Link href="/" className="flex items-center gap-2 text-xs font-bold text-[#17243b]"><Library size={18} /> ONG CHE TEE <span className="font-normal text-[#8e8d86]">/ Admin</span></Link>
-          <nav aria-label="Dashboard navigation" className="flex max-w-[65vw] shrink-0 items-center gap-3 overflow-x-auto">
+          <nav aria-label="Dashboard navigation" className="flex min-w-0 flex-1 items-center justify-end gap-3 overflow-x-auto">
             <Link href="/dashboard" aria-label="Overview" className="text-[#748092]"><LayoutDashboard size={17} /></Link>
             <Link href="/dashboard/books" aria-label="Book catalog" className="text-[#748092]"><BookCopy size={17} /></Link>
             <Link href="/dashboard/categories" aria-label="Book categories" className="text-[#748092]"><Tags size={17} /></Link>

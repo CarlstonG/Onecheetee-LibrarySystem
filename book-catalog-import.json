@@ -1,0 +1,1177 @@
+[
+  {
+    "book_code": "OCT-0001",
+    "title": "A Fortunate Life",
+    "author": "A. B. Facey"
+  },
+  {
+    "book_code": "OCT-0002",
+    "title": "The Great Ring-In",
+    "author": "P. Opas"
+  },
+  {
+    "book_code": "OCT-0003",
+    "title": "Montana 1948",
+    "author": "Larry Watson"
+  },
+  {
+    "book_code": "OCT-0004",
+    "title": "My Funky Fishing Book",
+    "author": "Sally Jenny"
+  },
+  {
+    "book_code": "OCT-0005",
+    "title": "Quick & Easy Paper Toys",
+    "author": "E. Richard Churchill"
+  },
+  {
+    "book_code": "OCT-0006",
+    "title": "Nicolas, where have you been?",
+    "author": "Leo Lionni"
+  },
+  {
+    "book_code": "OCT-0007",
+    "title": "Good to Read 5",
+    "author": "Libby Hathorn"
+  },
+  {
+    "book_code": "OCT-0008",
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë"
+  },
+  {
+    "book_code": "OCT-0009",
+    "title": "The Slave of Frankenstein",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0010",
+    "title": "Gulliver's Travels",
+    "author": "Jonathan Swift"
+  },
+  {
+    "book_code": "OCT-0011",
+    "title": "Songs in Ordinary Time",
+    "author": "Mary McGarry Morris"
+  },
+  {
+    "book_code": "OCT-0012",
+    "title": "The Bourne Ultimatum",
+    "author": "Robert Ludlum"
+  },
+  {
+    "book_code": "OCT-0013",
+    "title": "Game and Yours",
+    "author": "Arnold Palmer"
+  },
+  {
+    "book_code": "OCT-0014",
+    "title": "The Richest Man in Babylon",
+    "author": "George S. Clason"
+  },
+  {
+    "book_code": "OCT-0015",
+    "title": "Star Trek Voyager #20: Dark Matters (Book Two of Three)",
+    "author": "Christie Golden"
+  },
+  {
+    "book_code": "OCT-0016",
+    "title": "Uncle Tom's Cabin",
+    "author": "Harriet Beecher Stowe"
+  },
+  {
+    "book_code": "OCT-0017",
+    "title": "Chemistry (Second Edition)",
+    "author": "Saller, Moeller, Kleinberg, Guss, Castellion, Metz"
+  },
+  {
+    "book_code": "OCT-0018",
+    "title": "Principles of Chemistry",
+    "author": "Patterson, Kuper, Nanney"
+  },
+  {
+    "book_code": "OCT-0019",
+    "title": "Physical Chemistry (Fourth Edition)",
+    "author": "Atkins"
+  },
+  {
+    "book_code": "OCT-0020",
+    "title": "Organic Chemistry (Third Edition)",
+    "author": "Bruice"
+  },
+  {
+    "book_code": "OCT-0021",
+    "title": "Organic Chemistry",
+    "author": "Solomons & Fryhle"
+  },
+  {
+    "book_code": "OCT-0022",
+    "title": "Organic Chemistry (Third Edition)",
+    "author": "Ege"
+  },
+  {
+    "book_code": "OCT-0023",
+    "title": "Study Guide Organic Chemistry Vol. 1",
+    "author": "Wu"
+  },
+  {
+    "book_code": "OCT-0024",
+    "title": "Modern Organic Chemistry Vol. 1",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0025",
+    "title": "Principles of Geochemistry (Fourth Edition)",
+    "author": "Brian Mason, Carleton B. Moore"
+  },
+  {
+    "book_code": "OCT-0026",
+    "title": "Physical Chemistry",
+    "author": "Alberty & Silbey"
+  },
+  {
+    "book_code": "OCT-0027",
+    "title": "University Physics with Modern Physics (Volume 1)",
+    "author": "Young & Freedman"
+  },
+  {
+    "book_code": "OCT-0028",
+    "title": "University Physics with Modern Physics (Volume 2)",
+    "author": "Young & Freedman"
+  },
+  {
+    "book_code": "OCT-0029",
+    "title": "Physics",
+    "author": "Halliday, Resnick, Walker"
+  },
+  {
+    "book_code": "OCT-0030",
+    "title": "Physics Part 1 (Third Edition)",
+    "author": "Halliday & Resnick"
+  },
+  {
+    "book_code": "OCT-0031",
+    "title": "Conceptual Physics",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0032",
+    "title": "Physics Two",
+    "author": "Van Heuvelen"
+  },
+  {
+    "book_code": "OCT-0033",
+    "title": "Saxon Math 7/6 (Student Edition)",
+    "author": "Hake & Saxon"
+  },
+  {
+    "book_code": "OCT-0034",
+    "title": "Further Mathematics",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0035",
+    "title": "Heinemann Mathematics 8",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0036",
+    "title": "Heinemann Outcomes Mathematics 10",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0037",
+    "title": "Heinemann Outcomes Mathematics 9",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0038",
+    "title": "Mathematics Today Year 7",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0039",
+    "title": "Discrete Mathematics",
+    "author": "Johnsonbaugh"
+  },
+  {
+    "book_code": "OCT-0040",
+    "title": "Consumer Mathematics",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0041",
+    "title": "Mathematics for Australian Schools Year 8",
+    "author": "McLeod / Ganderton"
+  },
+  {
+    "book_code": "OCT-0042",
+    "title": "Year 11 Maths A & B",
+    "author": "Lynch & Andrews"
+  },
+  {
+    "book_code": "OCT-0043",
+    "title": "Essential Standard General Mathematics",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0044",
+    "title": "Space and Number Applications",
+    "author": "Michael Cody, Tom Day, Roy Wilson"
+  },
+  {
+    "book_code": "OCT-0045",
+    "title": "Heinemann Mathematics 7",
+    "author": "Dirk Strasser, Geoff Phillips, Jennifer Nolan"
+  },
+  {
+    "book_code": "OCT-0046",
+    "title": "Mathematics for Australian Schools Year 8 (Second Edition)",
+    "author": "McLeod / Ganderton"
+  },
+  {
+    "book_code": "OCT-0047",
+    "title": "Mathematics Today Year 8",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0048",
+    "title": "Assessment Under Challenge Mathematics",
+    "author": "Daly, Ardley, Brumby, Cody, Mothershead, Tomlinson"
+  },
+  {
+    "book_code": "OCT-0049",
+    "title": "Essential Advanced General Mathematics",
+    "author": "Evans, Wallace, Lipson, Avery"
+  },
+  {
+    "book_code": "OCT-0050",
+    "title": "Essential Mathematical Methods 1 & 2",
+    "author": "Evans, Lipson, Wallace, Blane, McCoy"
+  },
+  {
+    "book_code": "OCT-0051",
+    "title": "Maths 10 for the CSF II",
+    "author": "Swan, Adamson, Cocking, Adams"
+  },
+  {
+    "book_code": "OCT-0052",
+    "title": "Applications in Reasoning Space and Number and Data",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0053",
+    "title": "Heinemann Outcomes Mathematics 10 CSF II Edition",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0054",
+    "title": "Algebra 1 (College Preparatory Mathematics)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0055",
+    "title": "Linear Algebra",
+    "author": "O'Nan"
+  },
+  {
+    "book_code": "OCT-0056",
+    "title": "Analytic Geometry",
+    "author": "Love & Rainville"
+  },
+  {
+    "book_code": "OCT-0057",
+    "title": "Construction Mathematics Book 1",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0058",
+    "title": "Everyday Math Demystified",
+    "author": "Gibilisco"
+  },
+  {
+    "book_code": "OCT-0059",
+    "title": "Fundamentals of Probability with Stochastic Processes (Third Edition)",
+    "author": "Ghahramani"
+  },
+  {
+    "book_code": "OCT-0060",
+    "title": "Mathematics Today Year 9",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0061",
+    "title": "Modern 5 Book 1",
+    "author": "J.B. Fitzpatrick, G.L. Wilson"
+  },
+  {
+    "book_code": "OCT-0062",
+    "title": "Engineering Thermodynamics (Fourth Edition)",
+    "author": "Burghardt & Harbach"
+  },
+  {
+    "book_code": "OCT-0063",
+    "title": "Advanced Pure Mathematics",
+    "author": "J.D. Hodson"
+  },
+  {
+    "book_code": "OCT-0064",
+    "title": "Mathematics for the Eighties",
+    "author": "Priddle and Davies"
+  },
+  {
+    "book_code": "OCT-0065",
+    "title": "Mathematics Around Us",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0066",
+    "title": "Life Science",
+    "author": "Wright, Coble, Hopkins, Johnson, LaHart"
+  },
+  {
+    "book_code": "OCT-0067",
+    "title": "Biology Exploring Life",
+    "author": "Campbell, Williamson, Heyden"
+  },
+  {
+    "book_code": "OCT-0068",
+    "title": "Animal Behavior (Seventh Edition)",
+    "author": "Alcock"
+  },
+  {
+    "book_code": "OCT-0069",
+    "title": "Practical Skills in Biology (Third Edition)",
+    "author": "Jones, Reed, Weyers"
+  },
+  {
+    "book_code": "OCT-0070",
+    "title": "Evolutionary Genetics",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0071",
+    "title": "Biology of Ourselves",
+    "author": "Gordon Berry, David Lynn"
+  },
+  {
+    "book_code": "OCT-0072",
+    "title": "Active Science 3",
+    "author": "J. Fox, L. McCarthy"
+  },
+  {
+    "book_code": "OCT-0073",
+    "title": "Sci-Bytes (multiple volumes 1–10+)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0074",
+    "title": "Science Explorer (multiple titles)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0075",
+    "title": "Focus on Physical Science (California Edition)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0076",
+    "title": "Physical Science",
+    "author": "Hurd, Silver, Bacher, McLaughlin"
+  },
+  {
+    "book_code": "OCT-0077",
+    "title": "Handbook of Geology for Civil Engineers (1983)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0078",
+    "title": "Noli Me Tangere",
+    "author": "Dr. Jose Rizal"
+  },
+  {
+    "book_code": "OCT-0079",
+    "title": "English Communication Arts and Skills Through Filipino Literature (multiple volumes)",
+    "author": "Serrano & Lapid"
+  },
+  {
+    "book_code": "OCT-0080",
+    "title": "American Book English",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0081",
+    "title": "Spelling: Words and Skills (Second Edition)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0082",
+    "title": "Teaching Elementary Reading (3rd Edition)",
+    "author": "Tinker & McCullough"
+  },
+  {
+    "book_code": "OCT-0083",
+    "title": "Building English Skills (Purple Level, Revised Edition)",
+    "author": "McDougal, Littell"
+  },
+  {
+    "book_code": "OCT-0084",
+    "title": "Think, Talk and Write",
+    "author": "Joan and David Giles"
+  },
+  {
+    "book_code": "OCT-0085",
+    "title": "The Library of Writing Skills (multiple step-by-step guides)",
+    "author": "Spencer"
+  },
+  {
+    "book_code": "OCT-0086",
+    "title": "Cuklas (multiple volumes 1–10)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0087",
+    "title": "Economics (Fifth Edition)",
+    "author": "Lipsey, Purvis, Steiner"
+  },
+  {
+    "book_code": "OCT-0088",
+    "title": "Economics for Business",
+    "author": "Lisa Materano, Geoff Atkinson"
+  },
+  {
+    "book_code": "OCT-0089",
+    "title": "Issues in Financial Accounting (Third Edition)",
+    "author": "Scott Henderson, Graham Peirson"
+  },
+  {
+    "book_code": "OCT-0090",
+    "title": "Office Tax Procedures",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0091",
+    "title": "How to Organise and Operate a Small Business in Australia",
+    "author": "Helen Bowers, Robert Vinton"
+  },
+  {
+    "book_code": "OCT-0092",
+    "title": "Working in the Financial Services Industry",
+    "author": "Kay M. Rogers"
+  },
+  {
+    "book_code": "OCT-0093",
+    "title": "Essential Economics 1",
+    "author": "McNaughton, Lenten, Whitlock"
+  },
+  {
+    "book_code": "OCT-0094",
+    "title": "The Professional Man's Guide to Reducing Income Tax",
+    "author": "Prouse and Westley"
+  },
+  {
+    "book_code": "OCT-0095",
+    "title": "Business in Tough Times",
+    "author": "Day Lothian"
+  },
+  {
+    "book_code": "OCT-0096",
+    "title": "Corporate Entrepreneurs",
+    "author": "Pat Huntley"
+  },
+  {
+    "book_code": "OCT-0097",
+    "title": "Negotiating in the Age of Integrity",
+    "author": "Betty"
+  },
+  {
+    "book_code": "OCT-0098",
+    "title": "Soft Sell",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0099",
+    "title": "The Pursuit of Profit",
+    "author": "Harvey / Sykes"
+  },
+  {
+    "book_code": "OCT-0100",
+    "title": "Kevin Bailey Your Money Guide",
+    "author": "Kevin Bailey"
+  },
+  {
+    "book_code": "OCT-0101",
+    "title": "Selling Retail Salesperson",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0102",
+    "title": "The Search for Security in the Pacific 1901–14",
+    "author": "G. Meaney"
+  },
+  {
+    "book_code": "OCT-0103",
+    "title": "A Short History of Malaysia",
+    "author": "Virginia Matheson Hooker"
+  },
+  {
+    "book_code": "OCT-0104",
+    "title": "Switzerland",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0105",
+    "title": "Malaysia",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0106",
+    "title": "A Short History of Australia",
+    "author": "Manning Clark"
+  },
+  {
+    "book_code": "OCT-0107",
+    "title": "Pieces of Australian History",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0108",
+    "title": "Intruders in the Bush",
+    "author": "Edited by John Carroll"
+  },
+  {
+    "book_code": "OCT-0109",
+    "title": "Italy",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0110",
+    "title": "Beijing",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0111",
+    "title": "Ethnic New York",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0112",
+    "title": "SOSE 1 / SOSE 2 / SOSE 4 (multiple editions)",
+    "author": "various (Jacaranda, Heinemann)"
+  },
+  {
+    "book_code": "OCT-0113",
+    "title": "Geography Links 2",
+    "author": "Raymond Park, John Butler, Terry McMeekin, Heather Williams"
+  },
+  {
+    "book_code": "OCT-0114",
+    "title": "History Australia in the Twentieth Century",
+    "author": "Judy Mraz, Russell Ives, Jo Lamont, Megan Bourke, David Kronenberg, Mark Easton, Maureen Anderson"
+  },
+  {
+    "book_code": "OCT-0115",
+    "title": "Families Around the World",
+    "author": "Smith and Prescott"
+  },
+  {
+    "book_code": "OCT-0116",
+    "title": "The Search for Security",
+    "author": "Geoff Spenceley"
+  },
+  {
+    "book_code": "OCT-0117",
+    "title": "Southern Voices",
+    "author": "Julie Newnham and Elise Wackett"
+  },
+  {
+    "book_code": "OCT-0118",
+    "title": "Classical Greece",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0119",
+    "title": "Lands and Peoples (Volumes 1–5)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0120",
+    "title": "Basic Manufacturing Processes",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0121",
+    "title": "Build Your Own Z80 Computer",
+    "author": "Steve Ciarcia"
+  },
+  {
+    "book_code": "OCT-0122",
+    "title": "The Scientific Basis of Modern Agriculture",
+    "author": "Campbell & Bowyer"
+  },
+  {
+    "book_code": "OCT-0123",
+    "title": "Computer's Quick & Easy Guide to OS/2",
+    "author": "Crooks"
+  },
+  {
+    "book_code": "OCT-0124",
+    "title": "Machine Shop Basics",
+    "author": "Audel"
+  },
+  {
+    "book_code": "OCT-0125",
+    "title": "Peter Norton's DOS 6 Guide",
+    "author": "Peter Norton"
+  },
+  {
+    "book_code": "OCT-0126",
+    "title": "Computer Viruses",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0127",
+    "title": "The Mother of All Windows 98 Books",
+    "author": "Leonhard & Simon"
+  },
+  {
+    "book_code": "OCT-0128",
+    "title": "Digital Design (Third Edition)",
+    "author": "Mano"
+  },
+  {
+    "book_code": "OCT-0129",
+    "title": "Jamsa's 1001 DOS & PC Tips",
+    "author": "Jamsa"
+  },
+  {
+    "book_code": "OCT-0130",
+    "title": "Java How to Program (Fourth Edition)",
+    "author": "Deitel & Deitel"
+  },
+  {
+    "book_code": "OCT-0131",
+    "title": "Automotive Mechanics",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0132",
+    "title": "Human Development Report 1990",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0133",
+    "title": "Human Sexuality 96/97",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0134",
+    "title": "Vital Signs (multiple editions)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0135",
+    "title": "Active MAPEH (multiple volumes 7–10)",
+    "author": "Santiago Evangelista Santos"
+  },
+  {
+    "book_code": "OCT-0136",
+    "title": "Inner Running",
+    "author": "Donald Porter"
+  },
+  {
+    "book_code": "OCT-0137",
+    "title": "Learning to Swim Quickly and Safely",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0138",
+    "title": "Bottoms Up!",
+    "author": "Joyce L. Vedral, Ph.D."
+  },
+  {
+    "book_code": "OCT-0139",
+    "title": "Body in Balance",
+    "author": "Bryant Kallimni"
+  },
+  {
+    "book_code": "OCT-0140",
+    "title": "VCE Physical Education Book 2",
+    "author": "Davis, Kimmet, Auty"
+  },
+  {
+    "book_code": "OCT-0141",
+    "title": "Don't Count Yourself Out",
+    "author": "Jimmy Connors"
+  },
+  {
+    "book_code": "OCT-0142",
+    "title": "The HMO Health Care Companion",
+    "author": "Raymond"
+  },
+  {
+    "book_code": "OCT-0143",
+    "title": "Joan Lunden's Healthy Living",
+    "author": "Joan Lunden"
+  },
+  {
+    "book_code": "OCT-0144",
+    "title": "Becoming Your Own Parent",
+    "author": "Dennis Wholey"
+  },
+  {
+    "book_code": "OCT-0145",
+    "title": "Step by Step Tennis Skills",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0146",
+    "title": "de Castella on Running",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0147",
+    "title": "The Backsmart Fitness Plan",
+    "author": "Adam Weiss, D.C."
+  },
+  {
+    "book_code": "OCT-0148",
+    "title": "Techniques of End Game in Chess",
+    "author": "Goodwin"
+  },
+  {
+    "book_code": "OCT-0149",
+    "title": "Athletics - Field Events",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0150",
+    "title": "Manual of Water Safety and Life-Saving",
+    "author": "R.L."
+  },
+  {
+    "book_code": "OCT-0151",
+    "title": "The Soy Solution",
+    "author": "Barry Sears, Ph.D."
+  },
+  {
+    "book_code": "OCT-0152",
+    "title": "Nutrition and Weight Management",
+    "author": "Smaha & Grosvenor"
+  },
+  {
+    "book_code": "OCT-0153",
+    "title": "Good Calories, Bad Calories",
+    "author": "Gary Taubes"
+  },
+  {
+    "book_code": "OCT-0154",
+    "title": "Career Assessments and Their Meanings",
+    "author": "Sanna Maso"
+  },
+  {
+    "book_code": "OCT-0155",
+    "title": "Volunteering: Giving Back",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0156",
+    "title": "180 Creative Ideas for Getting Students Involved, Engaged, and Excited",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0157",
+    "title": "Healthy Travel",
+    "author": "Michael P. Zimring, M.D. and Lisa Lampert"
+  },
+  {
+    "book_code": "OCT-0158",
+    "title": "Cardiovascular Trials Review",
+    "author": "Kloner / Birnbaum"
+  },
+  {
+    "book_code": "OCT-0159",
+    "title": "Allergy: The Facts",
+    "author": "Davies and Ollier with Barry Fox"
+  },
+  {
+    "book_code": "OCT-0160",
+    "title": "Contemporary Diagnosis and Management of the Post-MI Patient",
+    "author": "Arnold Fox, M.D. with Barry Fox"
+  },
+  {
+    "book_code": "OCT-0161",
+    "title": "1996-1997 Pocket Book of Pediatric Antimicrobial Therapy",
+    "author": "Nelson"
+  },
+  {
+    "book_code": "OCT-0162",
+    "title": "Good News New Testament",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0163",
+    "title": "Beyond the Bin",
+    "author": "Jo Budd"
+  },
+  {
+    "book_code": "OCT-0164",
+    "title": "Student to Student",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0165",
+    "title": "A Brief History of the Church of Jesus Christ of Latter-day Saints",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0166",
+    "title": "Take Care of Yourself (Sixth Edition)",
+    "author": "Vickery Fries"
+  },
+  {
+    "book_code": "OCT-0167",
+    "title": "Our Drink",
+    "author": "Volkmann"
+  },
+  {
+    "book_code": "OCT-0168",
+    "title": "Detoxing",
+    "author": "T. Berry Brazelton, M.D."
+  },
+  {
+    "book_code": "OCT-0169",
+    "title": "Passionate Parenting",
+    "author": "Schmidt"
+  },
+  {
+    "book_code": "OCT-0170",
+    "title": "The Babyproofing Bible",
+    "author": "Jennifer Bright Reich"
+  },
+  {
+    "book_code": "OCT-0171",
+    "title": "The Baby Whisperer Solves All Your Problems",
+    "author": "Tracy Hogg and Melinda Blau"
+  },
+  {
+    "book_code": "OCT-0172",
+    "title": "Teens and Family Issues",
+    "author": "Marcovitz"
+  },
+  {
+    "book_code": "OCT-0173",
+    "title": "Your Preemie Baby",
+    "author": "Dr. Su Laurent & Maya Isaaks"
+  },
+  {
+    "book_code": "OCT-0174",
+    "title": "Twins: A Parent's Guide",
+    "author": "Dr. Carol Cooper & Katy Hymas"
+  },
+  {
+    "book_code": "OCT-0175",
+    "title": "The Boys' Handbook",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0176",
+    "title": "Facts for Boys",
+    "author": "Dobson"
+  },
+  {
+    "book_code": "OCT-0177",
+    "title": "The Potty Trainer",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0178",
+    "title": "Bringing Up Boys",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0179",
+    "title": "What You Can Do to Prevent Cancer",
+    "author": "Dr. Oliver Alabaster"
+  },
+  {
+    "book_code": "OCT-0180",
+    "title": "Surprised by Motherhood",
+    "author": "Jenny McCarthy"
+  },
+  {
+    "book_code": "OCT-0181",
+    "title": "Health & Home (multiple volumes 1988–2007)",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0182",
+    "title": "Organizational Psychology (Third Edition)",
+    "author": "Kello / Rubin / McIntyre"
+  },
+  {
+    "book_code": "OCT-0183",
+    "title": "Global Warming",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0184",
+    "title": "The Great Ages of Man",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0185",
+    "title": "Stormqueen!",
+    "author": "Marion Zimmer Bradley"
+  },
+  {
+    "book_code": "OCT-0186",
+    "title": "Two Minute Mysteries",
+    "author": "Donald J. Sobol"
+  },
+  {
+    "book_code": "OCT-0187",
+    "title": "The Man in the Iron Mask",
+    "author": "Alexandre Dumas"
+  },
+  {
+    "book_code": "OCT-0188",
+    "title": "Companies: What They Are and How They Work",
+    "author": "Martin H. Greenberg (editor)"
+  },
+  {
+    "book_code": "OCT-0189",
+    "title": "Catfantastic IV",
+    "author": "Andre Norton"
+  },
+  {
+    "book_code": "OCT-0190",
+    "title": "National Lampoon's Doon",
+    "author": "Ellis Weiner"
+  },
+  {
+    "book_code": "OCT-0191",
+    "title": "The Strength in Us All",
+    "author": "Sara Henderson"
+  },
+  {
+    "book_code": "OCT-0192",
+    "title": "Somewhere Safe with Somebody Good",
+    "author": "Jan Karon"
+  },
+  {
+    "book_code": "OCT-0193",
+    "title": "Twanged",
+    "author": "Carol Higgins Clark"
+  },
+  {
+    "book_code": "OCT-0194",
+    "title": "Organisational Principles",
+    "author": "Yuill"
+  },
+  {
+    "book_code": "OCT-0195",
+    "title": "Microtrends",
+    "author": "Mark J. Penn with E. Kinney Zalesne"
+  },
+  {
+    "book_code": "OCT-0196",
+    "title": "The Shrinking Man",
+    "author": "Richard Matheson"
+  },
+  {
+    "book_code": "OCT-0197",
+    "title": "I'd Listen to My Parents if They'd Just Shut Up",
+    "author": "Anthony E. Wolf, Ph.D."
+  },
+  {
+    "book_code": "OCT-0198",
+    "title": "Windwitch",
+    "author": "Susan Dennard"
+  },
+  {
+    "book_code": "OCT-0199",
+    "title": "Half of a Yellow Sun",
+    "author": "Chimamanda Ngozi Adichie"
+  },
+  {
+    "book_code": "OCT-0200",
+    "title": "The Healing Heart",
+    "author": "Cousins"
+  },
+  {
+    "book_code": "OCT-0201",
+    "title": "Derivatives: The Risks That Remain",
+    "author": "David M. Weiss, S.S. McCracken"
+  },
+  {
+    "book_code": "OCT-0202",
+    "title": "The Last Baroness",
+    "author": "Pere Sunbada"
+  },
+  {
+    "book_code": "OCT-0203",
+    "title": "Line Doggie",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0204",
+    "title": "Baby Bliss",
+    "author": "Dr. Harvey Karp"
+  },
+  {
+    "book_code": "OCT-0205",
+    "title": "Rich in Love",
+    "author": "Chip Ingram"
+  },
+  {
+    "book_code": "OCT-0206",
+    "title": "Holy Ambition",
+    "author": "Garcia"
+  },
+  {
+    "book_code": "OCT-0207",
+    "title": "A Clash of Kings",
+    "author": "George R. R. Martin"
+  },
+  {
+    "book_code": "OCT-0208",
+    "title": "Multiple Blessings",
+    "author": "Gosselin / Carson"
+  },
+  {
+    "book_code": "OCT-0209",
+    "title": "Don't Bet Against Me!",
+    "author": "Deanna Favre"
+  },
+  {
+    "book_code": "OCT-0210",
+    "title": "The Dragon Can't Dance",
+    "author": "Earl Lovelace"
+  },
+  {
+    "book_code": "OCT-0211",
+    "title": "Dear Miss Nightingale",
+    "author": "E. V. Quinn and J. M. Prest"
+  },
+  {
+    "book_code": "OCT-0212",
+    "title": "Trajectories: Inter-Asia Cultural Studies",
+    "author": "Edited by Kuan-Hsing Chen"
+  },
+  {
+    "book_code": "OCT-0213",
+    "title": "The Pool of Two Moons",
+    "author": "Kate Forsyth"
+  },
+  {
+    "book_code": "OCT-0214",
+    "title": "Second Wind",
+    "author": "Dick Francis"
+  },
+  {
+    "book_code": "OCT-0215",
+    "title": "The Devil's Teardrop",
+    "author": "Jeffery Deaver"
+  },
+  {
+    "book_code": "OCT-0216",
+    "title": "A Peculiar Chemistry",
+    "author": "Kitty Ray"
+  },
+  {
+    "book_code": "OCT-0217",
+    "title": "Slam",
+    "author": "Nick Hornby"
+  },
+  {
+    "book_code": "OCT-0218",
+    "title": "The Red Badge of Courage",
+    "author": "Stephen Crane"
+  },
+  {
+    "book_code": "OCT-0219",
+    "title": "The Summer of the Barshinskeys",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0220",
+    "title": "McQueen",
+    "author": "Christopher Sandford"
+  },
+  {
+    "book_code": "OCT-0221",
+    "title": "Nelson DeMille Wild Fire",
+    "author": "Nelson DeMille"
+  },
+  {
+    "book_code": "OCT-0222",
+    "title": "The Returning",
+    "author": "Rachelle Dekker"
+  },
+  {
+    "book_code": "OCT-0223",
+    "title": "Feathers",
+    "author": "Jacqueline Woodson"
+  },
+  {
+    "book_code": "OCT-0224",
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë"
+  },
+  {
+    "book_code": "OCT-0225",
+    "title": "The Unbelonging",
+    "author": "Joan Riley"
+  },
+  {
+    "book_code": "OCT-0226",
+    "title": "Essex",
+    "author": "Not listed yet"
+  },
+  {
+    "book_code": "OCT-0227",
+    "title": "King Lear",
+    "author": "William Shakespeare"
+  },
+  {
+    "book_code": "OCT-0228",
+    "title": "Inner Circle",
+    "author": "Claire McNab"
+  },
+  {
+    "book_code": "OCT-0229",
+    "title": "Copenhagen",
+    "author": "Michael Frayn"
+  },
+  {
+    "book_code": "OCT-0230",
+    "title": "From Baghdad with Love",
+    "author": "Lieutenant Colonel Jay Kopelman with Melinda Roth"
+  },
+  {
+    "book_code": "OCT-0231",
+    "title": "The First Chronicles of Thomas Covenant the Unbeliever",
+    "author": "Stephen R. Donaldson"
+  },
+  {
+    "book_code": "OCT-0232",
+    "title": "Horse's Arse",
+    "author": "Charlie Owen"
+  },
+  {
+    "book_code": "OCT-0233",
+    "title": "The Examination",
+    "author": "Malcolm Bosse"
+  },
+  {
+    "book_code": "OCT-0234",
+    "title": "Manhattan Beach",
+    "author": "Jennifer Egan"
+  },
+  {
+    "book_code": "OCT-0235",
+    "title": "Echoes of Time",
+    "author": "Not listed yet"
+  }
+]

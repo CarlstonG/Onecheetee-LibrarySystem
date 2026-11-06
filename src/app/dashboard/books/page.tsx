@@ -1,6 +1,7 @@
 import { connection } from "next/server";
 import { Plus, Search } from "lucide-react";
 import { deleteBook, importBooks, saveBook } from "@/app/actions";
+import { requireAdmin } from "@/lib/auth";
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import type { Book, BookCategory } from "@/lib/types";
 import SetupNotice from "@/app/dashboard/setup-notice";
@@ -10,6 +11,7 @@ export const instant = false;
 
 export default async function BooksPage({ searchParams }: PageProps<"/dashboard/books">) {
   await connection();
+  await requireAdmin();
   if (!isSupabaseConfigured()) return <SetupNotice />;
   const params = await searchParams;
   const supabase = await createClient();

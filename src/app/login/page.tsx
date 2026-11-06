@@ -11,7 +11,7 @@ export const instant = false;
 export default async function LoginPage({ searchParams }: PageProps<"/login">) {
   await connection();
   const profile = await getProfile();
-  if (profile && profile.role !== "guest") redirect("/dashboard");
+  if (profile) redirect(profile.role === "guest" ? "/dashboard/scan" : "/dashboard");
   const configured = isSupabaseConfigured();
   const params = await searchParams;
   const error = typeof params.error === "string" ? params.error : "";
@@ -32,7 +32,7 @@ export default async function LoginPage({ searchParams }: PageProps<"/login">) {
           </div>
           <p className="relative text-[10px] text-[#a5afbb]">Ong Che Tee - Bacong High School</p>
         </section>
-        <section className="p-7 sm:p-10 md:p-12">
+        <section className="p-5 sm:p-10 md:p-12">
           <Link href="/" className="inline-flex items-center gap-2 text-xs text-[#7e8995] hover:text-[#17243b]"><ArrowLeft size={14} /> Back to catalog</Link>
           <div className="mt-12 md:mt-16">
             <p className="text-[9px] font-bold uppercase tracking-[.22em] text-[#a17d46]">Staff portal</p>
@@ -40,7 +40,6 @@ export default async function LoginPage({ searchParams }: PageProps<"/login">) {
             <p className="mt-2 text-xs text-[#818c98]">Sign in to manage your school library.</p>
           </div>
             {!configured && <p role="status" className="mt-5 rounded-lg border border-[#eadfc7] bg-[#f7f1e4] px-3 py-2.5 text-xs leading-5 text-[#826d4c]">Staff sign-in is unavailable until Supabase is configured. Add the project URL and anon key to your environment.</p>}
-            {profile?.role === "guest" && <p role="status" className="mt-5 rounded-lg border border-[#eadfc7] bg-[#f7f1e4] px-3 py-2.5 text-xs text-[#826d4c]">Your account is registered, but it does not have library staff access. Contact a super admin for help.</p>}
             {error && <p role="alert" className="mt-5 rounded-lg border border-[#efd2c9] bg-[#fff4f0] px-3 py-2.5 text-xs text-[#9e5745]">{error}</p>}
             <form action={signIn} className="mt-7 space-y-4">
               <label className="block text-xs font-semibold text-[#46556a]">Email address

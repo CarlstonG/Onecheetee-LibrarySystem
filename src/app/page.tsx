@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { connection } from "next/server";
-import { ArrowRight, BookMarked, BookOpen, GraduationCap, LayoutDashboard, Library, LogIn } from "lucide-react";
+import { ArrowDown, ArrowRight, GraduationCap, LayoutDashboard, Library, LogIn } from "lucide-react";
 import Catalog from "@/app/catalog";
 import { getProfile } from "@/lib/auth";
 
@@ -9,9 +10,10 @@ export const instant = false;
 export default async function Home() {
   await connection();
   const profile = await getProfile();
+
   return (
     <main className="min-h-screen bg-[#f7f5ef]">
-      <header className="border-b border-[#e9e5db] bg-[#fbfaf6]">
+      <header className="relative z-20 border-b border-[#e9e5db] bg-[#fbfaf6]">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
           <Link href="/" className="flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#17243b] text-[#e2bd73]"><Library size={19} /></span>
@@ -30,53 +32,109 @@ export default async function Home() {
           </nav>
         </div>
       </header>
-      <div className="mx-auto grid max-w-[1440px] gap-8 px-5 py-7 sm:px-8 lg:grid-cols-[226px_minmax(0,1fr)] lg:gap-10 lg:px-12 lg:py-10">
-        <aside className="hidden lg:block">
-          <div className="sticky top-8">
-            <div className="soft-grid relative overflow-hidden rounded-2xl bg-[#e9e5da] p-5">
-              <div className="absolute -right-7 -top-8 h-24 w-24 rounded-full bg-[#d7c89e]/45" />
-              <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/75 text-[#7b6849]"><BookMarked size={18} /></div>
-              <p className="font-editorial relative mt-5 text-xl leading-snug text-[#24344b]">A quiet place to discover.</p>
-              <p className="relative mt-2 text-[11px] leading-5 text-[#777a78]">Books open doors. Browse the shelves and find one that speaks to you.</p>
-            </div>
-            <div className="mt-7 space-y-1">
-              <p className="mb-3 px-3 text-[9px] font-bold uppercase tracking-[.2em] text-[#aaa69b]">Explore</p>
-              <div className="flex items-center gap-3 rounded-lg bg-white px-3 py-3 text-xs font-semibold text-[#27364b] shadow-sm"><BookOpen size={15} className="text-[#b68a44]" /> All books <span className="ml-auto text-[#9da2a3]">↗</span></div>
-              <a href="#collection" className="flex items-center gap-3 rounded-lg px-3 py-3 text-xs text-[#788391] hover:bg-white/70"><GraduationCap size={15} /> Student favorites</a>
-            </div>
-            <div className="mt-10 border-t border-[#e5e1d7] pt-5">
-              <p className="text-[10px] font-bold uppercase tracking-[.18em] text-[#aa9b79]">Read. Imagine. Grow.</p>
-              <p className="mt-2 text-[11px] leading-5 text-[#90969c]">Visit the library during school hours. Our librarian is happy to help you find your next read.</p>
+
+      <section aria-labelledby="home-title" className="relative isolate min-h-[680px] overflow-hidden bg-[#17243b] md:h-[min(780px,calc(100svh-72px))] md:min-h-[640px]">
+        <Image
+          src="/campus-courtyard.jpg"
+          alt="Ong Che Tee - Bacong High School campus beneath a bright blue sky"
+          fill
+          preload
+          sizes="100vw"
+          className="object-cover object-[center_57%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101d30]/85 via-[#17243b]/55 to-[#17243b]/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#101d30]/70 via-transparent to-[#101d30]/10" />
+        <div className="relative mx-auto flex min-h-[680px] max-w-[1440px] items-center px-6 pb-20 pt-16 sm:px-10 md:h-full md:min-h-0 md:px-16">
+          <div className="max-w-3xl text-white">
+            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[.24em] text-[#f0d08b] sm:text-xs">
+              <span className="h-px w-8 bg-[#f0d08b]" />
+              Ong Che Tee · Bacong High School
+            </p>
+            <h1 id="home-title" className="font-editorial mt-6 text-5xl leading-[1.05] tracking-[-.035em] sm:text-6xl md:text-7xl lg:text-[88px]">
+              A place to learn.
+              <span className="mt-2 block text-[#f0d08b]">A world to imagine.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-sm leading-7 text-white/80 sm:text-base sm:leading-8">
+              Find a little inspiration between the shelves. Explore the books waiting for you at our school library.
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <a href="#collection" className="inline-flex items-center gap-3 rounded-full bg-[#e6c27b] px-6 py-3.5 text-xs font-bold text-[#17243b] shadow-lg shadow-black/15 transition hover:-translate-y-0.5 hover:bg-[#f0d08b]">
+                Explore the catalog <ArrowRight size={15} />
+              </a>
+              <a href="#school-gallery" className="inline-flex items-center gap-2 rounded-full px-4 py-3 text-xs font-semibold text-white/90 transition hover:text-[#f0d08b]">
+                Get to know us <ArrowDown size={14} />
+              </a>
             </div>
           </div>
-        </aside>
-        <div className="min-w-0">
-          <section className="relative mb-9 overflow-hidden rounded-2xl bg-[#17243b] px-6 py-8 text-white sm:px-9 sm:py-10">
-            <div className="absolute -right-10 -top-16 h-64 w-64 rounded-full border border-white/10" />
-            <div className="absolute -right-1 -top-6 h-48 w-48 rounded-full border border-white/10" />
-            <div className="relative max-w-[580px]">
-              <p className="text-[9px] font-bold uppercase tracking-[.25em] text-[#d9b976]">Ong Che Tee · Bacong High School</p>
-              <h1 className="font-editorial mt-4 text-3xl leading-tight sm:text-[40px]">A good book can take you anywhere.</h1>
-              <p className="mt-3 max-w-md text-xs leading-6 text-[#c2c9d2] sm:text-sm">Discover the books in our school library. Search by title, author, ISBN, or catalog code.</p>
-              <a href="#collection" className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#d8b46c] px-4 py-2.5 text-xs font-bold text-[#17243b] transition hover:bg-[#e6c782]">Explore the collection <ArrowRight size={14} /></a>
-            </div>
-            <div className="absolute bottom-0 right-[5%] hidden h-[88%] w-[160px] rotate-[7deg] rounded-t-lg border-x border-t border-white/25 bg-gradient-to-br from-[#d2b178] via-[#ab8155] to-[#785b47] p-3 shadow-xl md:block">
-              <div className="flex h-full flex-col items-center justify-center border border-white/35 px-3 text-center">
-                <span className="text-[8px] uppercase tracking-[.25em] text-white/75">A world between</span>
-                <span className="font-editorial mt-3 text-2xl leading-tight text-white">the<br />pages</span>
-                <span className="mt-3 text-[7px] uppercase tracking-[.18em] text-white/75">OCT Library</span>
-              </div>
-            </div>
-          </section>
-          <section id="collection" className="scroll-mt-6">
-            <Catalog />
-          </section>
-          <footer className="mt-14 flex flex-col items-center gap-2 border-t border-[#e7e4dc] py-5 text-center text-[10px] text-[#9a9e9d] sm:flex-row sm:justify-between sm:text-left">
-            <p>© 2026 Ong Che Tee - Bacong High School. All rights reserved.</p>
-            <p>Website developed by: <a href="http://carlgriff.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-[#7b6849] underline-offset-2 hover:underline">Carl Griff</a></p>
-          </footer>
         </div>
-      </div>
+        <div className="absolute bottom-7 right-7 hidden items-center gap-3 text-[9px] font-semibold uppercase tracking-[.2em] text-white/75 md:flex">
+          <span className="h-px w-10 bg-white/50" /> Read · Imagine · Grow
+        </div>
+      </section>
+
+      <section id="school-gallery" aria-labelledby="gallery-title" className="mx-auto max-w-[1240px] scroll-mt-8 px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
+        <div className="mb-9 flex flex-col justify-between gap-5 sm:mb-12 sm:flex-row sm:items-end">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[.22em] text-[#a17d46]">A glimpse of campus</p>
+            <h2 id="gallery-title" className="font-editorial mt-3 max-w-2xl text-3xl leading-tight text-[#17243b] sm:text-5xl">A place for learning, and a little wonder.</h2>
+          </div>
+          <p className="max-w-sm text-xs leading-6 text-[#748092] sm:text-sm sm:leading-7">From familiar school grounds to the quiet joy of finding a new book, there is always something to discover here.</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-12">
+          <figure className="group relative min-h-[360px] overflow-hidden rounded-2xl bg-[#d8d1bd] md:col-span-7 md:row-span-2 md:min-h-[560px]">
+            <Image src="/campus-facade.jpg" alt="The main building of Ong Che Tee - Bacong High School" fill sizes="(max-width: 768px) 100vw, 58vw" className="object-cover transition duration-700 group-hover:scale-[1.03]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#101d30]/75 via-transparent to-transparent" />
+            <figcaption className="absolute bottom-0 left-0 p-6 text-white sm:p-8">
+              <span className="text-[9px] font-bold uppercase tracking-[.2em] text-[#f0d08b]">Our school</span>
+              <p className="font-editorial mt-2 text-2xl sm:text-3xl">A home for curious minds.</p>
+            </figcaption>
+          </figure>
+          <figure className="group relative min-h-[260px] overflow-hidden rounded-2xl bg-[#d8d1bd] md:col-span-5">
+            <Image src="/library-shelves.jpg" alt="Rows of books on the library shelves" fill sizes="(max-width: 768px) 100vw, 42vw" className="object-cover transition duration-700 group-hover:scale-[1.03]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#101d30]/70 via-transparent to-transparent" />
+            <figcaption className="absolute bottom-0 left-0 p-5 text-white sm:p-6">
+              <span className="text-[9px] font-bold uppercase tracking-[.2em] text-[#f0d08b]">Find your next read</span>
+              <p className="font-editorial mt-1 text-xl sm:text-2xl">Stories for every shelf.</p>
+            </figcaption>
+          </figure>
+          <figure className="group relative min-h-[260px] overflow-hidden rounded-2xl bg-[#d8d1bd] md:col-span-5">
+            <Image src="/library-reading-room.jpg" alt="The library reading room with tables and bookshelves" fill sizes="(max-width: 768px) 100vw, 42vw" className="object-cover transition duration-700 group-hover:scale-[1.03]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#101d30]/70 via-transparent to-transparent" />
+            <figcaption className="absolute bottom-0 left-0 p-5 text-white sm:p-6">
+              <span className="text-[9px] font-bold uppercase tracking-[.2em] text-[#f0d08b]">Your library</span>
+              <p className="font-editorial mt-1 text-xl sm:text-2xl">A quiet place to discover.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="featured-cta-title" className="mx-auto max-w-[1240px] px-5 pb-20 sm:px-8 sm:pb-28 lg:px-12">
+        <div className="relative overflow-hidden rounded-2xl bg-[#17243b] px-6 py-10 text-white sm:px-12 sm:py-12">
+          <div className="absolute -right-16 -top-32 h-80 w-80 rounded-full border border-white/10" />
+          <div className="absolute -right-2 -top-20 h-56 w-56 rounded-full border border-white/10" />
+          <div className="relative flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-[9px] font-bold uppercase tracking-[.22em] text-[#e6c27b]">Handpicked for you</p>
+              <h2 id="featured-cta-title" className="font-editorial mt-2 text-3xl sm:text-4xl">Your next favorite might be here.</h2>
+              <p className="mt-3 max-w-xl text-xs leading-6 text-white/70 sm:text-sm">Take a look at the titles our librarian has picked out for curious readers.</p>
+            </div>
+            <a href="#featured-books" className="inline-flex shrink-0 items-center justify-center gap-3 self-start rounded-full bg-[#e6c27b] px-6 py-3.5 text-xs font-bold text-[#17243b] transition hover:-translate-y-0.5 hover:bg-[#f0d08b] sm:self-center">
+              Check featured books <ArrowRight size={15} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="collection" aria-label="Library catalog" className="mx-auto max-w-[1240px] scroll-mt-8 px-5 pb-20 sm:px-8 lg:px-12">
+        <Catalog />
+      </section>
+
+      <footer className="border-t border-[#e7e4dc]">
+        <div className="mx-auto flex max-w-[1240px] flex-col items-center gap-2 px-5 py-6 text-center text-[10px] text-[#9a9e9d] sm:flex-row sm:justify-between sm:text-left sm:px-8 lg:px-12">
+          <p>© 2026 Ong Che Tee - Bacong High School. All rights reserved.</p>
+          <p>Website developed by: <a href="http://carlgriff.com/" target="_blank" rel="noopener noreferrer" className="font-medium text-[#7b6849] underline-offset-2 hover:underline">Carl Griff</a></p>
+        </div>
+      </footer>
     </main>
   );
 }

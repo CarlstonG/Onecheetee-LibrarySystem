@@ -1,15 +1,18 @@
 import { connection } from "next/server";
 import { AlertCircle, CalendarClock, Check, ClipboardList } from "lucide-react";
-import { approveReturn, checkoutBook } from "@/app/actions";
+import { approveReturn } from "@/app/actions";
+import { requireAdmin } from "@/lib/auth";
 import { formatDate } from "@/lib/format";
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
 import type { Book, BorrowRecord } from "@/lib/types";
 import SetupNotice from "@/app/dashboard/setup-notice";
+import BookCheckoutForm from "@/app/dashboard/transactions/book-checkout-form";
 
 export const instant = false;
 
 export default async function TransactionsPage() {
   await connection();
+  await requireAdmin();
   if (!isSupabaseConfigured()) return <SetupNotice />;
   const supabase = await createClient();
   const [bookResult, recordsResult] = await Promise.all([
@@ -26,19 +29,9 @@ export default async function TransactionsPage() {
       <div><p className="text-[9px] font-bold uppercase tracking-[.22em] text-[#a17d46]">Circulation desk</p><h1 className="font-editorial mt-2 text-3xl text-[#17243b]">Book transactions</h1><p className="mt-1 text-xs text-[#7d8996]">Record checkouts and verify returned books.</p></div>
       <section className="mt-7 rounded-xl border border-[#e9e6de] bg-[#fbfaf6] p-5 sm:p-6">
         <div className="mb-5 flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#e9edf3] text-[#53677e]"><ClipboardList size={17} /></span><div><h2 className="text-sm font-semibold text-[#27364b]">Check out a book</h2><p className="mt-1 text-[10px] text-[#939ba3]">Borrower details are visible only to authorized staff.</p></div></div>
-        {availableBooks.length ? <form action={checkoutBook} className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          <label className="text-[10px] font-semibold text-[#687687] sm:col-span-2 lg:col-span-3">Book *
-            <select name="book_id" required defaultValue="" className="mt-1.5 block h-10 w-full rounded-lg border border-[#e5e2da] bg-white px-3 text-xs"><option value="" disabled>Select an available book</option>{availableBooks.map((book) => <option key={book.id} value={book.id}>{book.title} · {book.book_code}</option>)}</select>
-          </label>
-          <label className="text-[10px] font-semibold text-[#687687]">Borrower name *<input name="borrower_name" required className="mt-1.5 block h-10 w-full rounded-lg border border-[#e5e2da] bg-white px-3 text-xs font-normal" /></label>
-          <label className="text-[10px] font-semibold text-[#687687]">Borrower type *
-            <select name="borrower_type" required defaultValue="" className="mt-1.5 block h-10 w-full rounded-lg border border-[#e5e2da] bg-white px-3 text-xs"><option value="" disabled>Select type</option><option value="student">Student</option><option value="faculty">Faculty</option><option value="outsider">Outsider</option></select>
-          </label>
-          <label className="text-[10px] font-semibold text-[#687687]">Due date *<input name="due_date" type="datetime-local" required min={today} defaultValue={`${today}T16:00`} className="mt-1.5 block h-10 w-full rounded-lg border border-[#e5e2da] bg-white px-3 text-xs font-normal" /></label>
-          <label className="text-[10px] font-semibold text-[#687687]">Grade / section / department<input name="section" className="mt-1.5 block h-10 w-full rounded-lg border border-[#e5e2da] bg-white px-3 text-xs font-normal" /></label>
-          <label className="text-[10px] font-semibold text-[#687687] sm:col-span-2 lg:col-span-2">Contact / home address<input name="address" className="mt-1.5 block h-10 w-full rounded-lg border border-[#e5e2da] bg-white px-3 text-xs font-normal" /></label>
-          <button className="h-10 rounded-lg bg-[#17243b] px-4 text-xs font-semibold text-white hover:bg-[#293b57]">Confirm checkout</button>
-        </form> : <p className="rounded-lg bg-[#f2f0e9] px-4 py-3 text-xs text-[#7c8792]">There are no available books to check out right now.</p>}
+        {availableBooks.length
+          ? <BookCheckoutForm books={availableBooks} today={today} />
+          : <p className="rounded-lg bg-[#f2f0e9] px-4 py-3 text-xs text-[#7c8792]">There are no available books to check out right now.</p>}
       </section>
       <section className="mt-8">
         <div className="mb-4 flex items-end justify-between"><div><h2 className="text-sm font-semibold text-[#27364b]">Active loans</h2><p className="mt-1 text-[10px] text-[#939ba3]">Outstanding checkouts and return approvals.</p></div><span className="rounded-full bg-[#f1eee5] px-3 py-1 text-[10px] text-[#8a7959]">{records.length} active</span></div>

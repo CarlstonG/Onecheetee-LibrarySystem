@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { connection } from "next/server";
 import { ArrowRight, BookOpen, CircleCheck, Clock3, Library } from "lucide-react";
+import { requireRole } from "@/lib/auth";
+import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/supabase/server";
 import { formatDate } from "@/lib/format";
@@ -11,6 +13,8 @@ export const instant = false;
 
 export default async function DashboardHome() {
   await connection();
+  const profile = await requireRole(["guest", "admin", "super_admin"]);
+  if (profile.role === "guest") redirect("/dashboard/scan");
   if (!isSupabaseConfigured()) return <SetupNotice />;
   const supabase = await createClient();
   const [bookCount, availableCount, borrowedCount, activeRecords, recentBooks] = await Promise.all([

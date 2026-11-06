@@ -18,11 +18,11 @@ const colors = [
   "from-[#b77d52] to-[#7c493b]",
 ];
 
-function BookCover({ book, index, large = false }: { book: Book; index: number; large?: boolean }) {
+function BookCover({ book, index, large = false, compact = false }: { book: Book; index: number; large?: boolean; compact?: boolean }) {
   return (
     <div
       className={`book-cover relative flex shrink-0 flex-col justify-between overflow-hidden rounded-sm bg-gradient-to-br ${colors[index % colors.length]} ${
-        large ? "h-48 w-32 sm:h-64 sm:w-44" : "h-[204px] w-[142px]"
+        large ? "h-48 w-32 sm:h-64 sm:w-44" : compact ? "h-[104px] w-[72px]" : "aspect-[7/10] w-full max-w-[142px]"
       }`}
       role="img"
       aria-label={book.cover_image_url ? `${book.title} cover` : `${book.title} cover placeholder`}
@@ -194,7 +194,7 @@ export default function Catalog({ initialBooks = [] }: { initialBooks?: Book[] }
               {featuredBooks.map((book) => {
                 const bookIndex = books.findIndex((item) => item.id === book.id);
                 return <button key={book.id} onClick={() => setSelected(book)} className="group flex min-w-0 items-center gap-3 rounded-xl border border-[#eeece5] bg-white p-3 text-left transition hover:border-[#d8caa7] hover:shadow-sm">
-                  <BookCover book={book} index={bookIndex} />
+                  <BookCover book={book} index={bookIndex} compact />
                   <span className="min-w-0 flex-1">
                     <span className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-[.14em] text-[#a17d46]"><Star size={11} /> Featured</span>
                     <span className="mt-1 block line-clamp-2 text-xs font-semibold text-[#27364b]">{book.title}</span>
@@ -237,12 +237,12 @@ export default function Catalog({ initialBooks = [] }: { initialBooks?: Book[] }
         </div>
       ) : (
         <>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-7 min-[420px]:gap-x-4 sm:grid-cols-3 sm:gap-y-8 lg:grid-cols-4 xl:grid-cols-5">
           {pageBooks.map((book) => {
             const index = books.findIndex((item) => item.id === book.id);
             return (
             <button key={book.id} onClick={() => setSelected(book)} className="group min-w-0 text-left">
-              <div className="relative flex justify-center overflow-hidden rounded-xl bg-[#f0ede5] p-4 transition-colors group-hover:bg-[#eae6dc]">
+              <div className="relative flex justify-center overflow-hidden rounded-xl bg-[#f0ede5] p-2.5 transition-colors group-hover:bg-[#eae6dc] min-[420px]:p-4">
                 <BookCover book={book} index={index} />
                 <span className="absolute bottom-5 right-5 translate-y-1 rounded-full bg-white/95 p-2 text-[#17243b] opacity-0 shadow transition-all group-hover:translate-y-0 group-hover:opacity-100"><ArrowUpRight size={14} /></span>
               </div>
@@ -261,15 +261,16 @@ export default function Catalog({ initialBooks = [] }: { initialBooks?: Book[] }
             </button>
           );})}
         </div>
-        {pageCount > 1 && <nav aria-label="Catalog pages" className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <button type="button" disabled={currentPage === 1} onClick={() => setPage(currentPage - 1)} className="inline-flex h-9 items-center gap-1 rounded-lg border border-[#e5e2da] bg-white px-3 text-[10px] font-semibold text-[#536174] hover:bg-[#f1efe8] disabled:cursor-not-allowed disabled:opacity-40"><ChevronLeft size={14} /> Previous</button>
-          <div role="radiogroup" aria-label="Choose catalog page" className="flex items-center gap-2">
-            {Array.from({ length: pageCount }, (_, index) => index + 1).map((pageNumber) => <label key={pageNumber} className="flex cursor-pointer items-center justify-center">
-              <input type="radio" name="catalog-page" value={pageNumber} checked={currentPage === pageNumber} onChange={() => setPage(pageNumber)} aria-label={`Page ${pageNumber}`} className="peer sr-only" />
-              <span className={`flex h-8 min-w-8 items-center justify-center rounded-full border px-2 text-[10px] font-semibold transition ${currentPage === pageNumber ? "border-[#17243b] bg-[#17243b] text-white" : "border-[#e5e2da] bg-white text-[#657386] hover:bg-[#f1efe8]"} peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[#b6955a]`}>{pageNumber}</span>
-            </label>)}
-          </div>
-          <button type="button" disabled={currentPage === pageCount} onClick={() => setPage(currentPage + 1)} className="inline-flex h-9 items-center gap-1 rounded-lg border border-[#e5e2da] bg-white px-3 text-[10px] font-semibold text-[#536174] hover:bg-[#f1efe8] disabled:cursor-not-allowed disabled:opacity-40">Next <ChevronRight size={14} /></button>
+        {pageCount > 1 && <nav aria-label="Catalog pages" className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <button type="button" disabled={currentPage === 1} onClick={() => setPage(currentPage - 1)} className="inline-flex h-11 items-center gap-1 rounded-lg border border-[#e5e2da] bg-white px-3 text-[10px] font-semibold text-[#536174] hover:bg-[#f1efe8] disabled:cursor-not-allowed disabled:opacity-40"><ChevronLeft size={14} /> Previous</button>
+          <label className="flex h-11 items-center gap-2 rounded-lg border border-[#e5e2da] bg-white px-3 text-[10px] font-semibold text-[#536174]">
+            <span>Page</span>
+            <select aria-label="Choose catalog page" value={currentPage} onChange={(event) => setPage(Number(event.target.value))} className="max-w-28 bg-transparent text-xs font-semibold outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b6955a]">
+              {Array.from({ length: pageCount }, (_, index) => index + 1).map((pageNumber) => <option key={pageNumber} value={pageNumber}>{pageNumber}</option>)}
+            </select>
+            <span className="font-normal text-[#929aa1]">of {pageCount}</span>
+          </label>
+          <button type="button" disabled={currentPage === pageCount} onClick={() => setPage(currentPage + 1)} className="inline-flex h-11 items-center gap-1 rounded-lg border border-[#e5e2da] bg-white px-3 text-[10px] font-semibold text-[#536174] hover:bg-[#f1efe8] disabled:cursor-not-allowed disabled:opacity-40">Next <ChevronRight size={14} /></button>
           <p className="w-full text-center text-[10px] text-[#929aa1]">Showing {(currentPage - 1) * booksPerPage + 1}–{Math.min(currentPage * booksPerPage, visibleBooks.length)} of {visibleBooks.length}</p>
         </nav>}
         </>

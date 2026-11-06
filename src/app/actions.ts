@@ -200,7 +200,7 @@ export async function assignRole(formData: FormData) {
   const admin = await requireSuperAdmin();
   const userId = String(formData.get("user_id") ?? "");
   const role = String(formData.get("role") ?? "");
-  if (!userId || !["admin", "guest"].includes(role)) throw new Error("Choose a valid user and role.");
+  if (!userId || !["admin", "guest", "super_admin"].includes(role)) throw new Error("Choose a valid user and role.");
   const supabase = await createClient();
   const { error } = await supabase.rpc("assign_profile_role", {
     p_user_id: userId,

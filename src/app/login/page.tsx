@@ -37,7 +37,7 @@ export default async function LoginPage({ searchParams }: PageProps<"/login">) {
           <div className="mt-12 md:mt-16">
             <p className="text-[9px] font-bold uppercase tracking-[.22em] text-[#a17d46]">Staff portal</p>
             <h2 className="font-editorial mt-2 text-3xl text-[#17243b]">Welcome back</h2>
-            <p className="mt-2 text-xs text-[#818c98]">Sign in to manage your school library.</p>
+            <p className="mt-2 text-xs text-[#818c98]">Sign in or register with Google for library access.</p>
           </div>
             {!configured && <p role="status" className="mt-5 rounded-lg border border-[#eadfc7] bg-[#f7f1e4] px-3 py-2.5 text-xs leading-5 text-[#826d4c]">Staff sign-in is unavailable until Supabase is configured. Add the project URL and anon key to your environment.</p>}
             {error && <p role="alert" className="mt-5 rounded-lg border border-[#efd2c9] bg-[#fff4f0] px-3 py-2.5 text-xs text-[#9e5745]">{error}</p>}
@@ -52,9 +52,9 @@ export default async function LoginPage({ searchParams }: PageProps<"/login">) {
           </form>
           <div className="my-5 flex items-center gap-3 text-[9px] uppercase tracking-[.16em] text-[#a2a7a9]"><span className="h-px flex-1 bg-[#e9e6de]" /> or continue with <span className="h-px flex-1 bg-[#e9e6de]" /></div>
           <form action={signInWithGoogle}>
-            <button type="submit" disabled={!configured} className="h-11 w-full rounded-lg border border-[#e5e2da] bg-white text-xs font-semibold text-[#4c5a6c] transition hover:bg-[#f5f3ed] disabled:cursor-not-allowed disabled:opacity-50">Continue with Google</button>
+            <button type="submit" disabled={!configured} className="h-11 w-full rounded-lg border border-[#e5e2da] bg-white text-xs font-semibold text-[#4c5a6c] transition hover:bg-[#f5f3ed] disabled:cursor-not-allowed disabled:opacity-50">Register or sign in with Google</button>
           </form>
-          <p className="mt-7 text-center text-[10px] leading-5 text-[#a0a5a6]">Staff accounts are created by the library administrator.<br />Contact your super admin if you need access.</p>
+          <p className="mt-7 text-center text-[10px] leading-5 text-[#a0a5a6]">New Google accounts start with limited Guest access.<br />A super admin must approve staff access.</p>
         </section>
       </div>
     </main>

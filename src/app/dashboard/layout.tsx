@@ -70,7 +70,10 @@ export default async function DashboardLayout({ children }: LayoutProps<"/dashbo
             </>}
           </nav>
         </header>
-        <div className="mx-auto max-w-[1440px] px-4 py-6 sm:px-8 sm:py-7 lg:px-10 lg:py-10">{children}</div>
+        <div className="mx-auto max-w-[1440px] px-4 py-6 sm:px-8 sm:py-7 lg:px-10 lg:py-10">
+          {isGuest && <div role="status" className="mb-5 rounded-xl border border-[#eadfc7] bg-[#f7f1e4] p-4 text-xs leading-5 text-[#826d4c]">You have limited Guest access. A super admin must approve your account for staff permissions.</div>}
+          {children}
+        </div>
       </main>
     </div>
   );

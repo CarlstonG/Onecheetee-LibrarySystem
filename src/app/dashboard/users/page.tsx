@@ -23,6 +23,8 @@ export default async function UsersPage({ searchParams }: PageProps<"/dashboard/
   const { data, error } = await supabase.from("profiles").select("id,email,full_name,role,created_at").order("created_at", { ascending: false });
   if (error) throw new Error(`Could not load users: ${error.message}`);
   const profiles = (data ?? []) as Profile[];
+  const guestProfiles = profiles.filter((profile) => profile.role === "guest");
+  const staffProfiles = profiles.filter((profile) => profile.role !== "guest");
   let pendingUsers: PendingUser[] = [];
   const adminConfigured = isSupabaseAdminConfigured();
 
@@ -46,10 +48,10 @@ export default async function UsersPage({ searchParams }: PageProps<"/dashboard/
   return (
     <div>
       <div><p className="text-[9px] font-bold uppercase tracking-[.22em] text-[#a17d46]">Administration</p><h1 className="font-editorial mt-2 text-3xl text-[#17243b]">User roles</h1><p className="mt-1 text-xs text-[#7d8996]">Grant or remove staff access for library accounts.</p></div>
-      <div className="mt-7 flex items-start gap-3 rounded-xl border border-[#eadfc7] bg-[#f7f1e4] p-4 text-[11px] leading-5 text-[#826d4c]"><ShieldCheck size={17} className="mt-0.5 shrink-0" />Only super admins can manage roles. Users with guest access cannot sign in to the dashboard.</div>
+      <div className="mt-7 flex items-start gap-3 rounded-xl border border-[#eadfc7] bg-[#f7f1e4] p-4 text-[11px] leading-5 text-[#826d4c]"><ShieldCheck size={17} className="mt-0.5 shrink-0" />Only super admins can manage roles. Guest accounts are limited to read-only book scanning.</div>
       {params.error && <p role="alert" className="mt-4 rounded-lg border border-[#edd8d2] bg-[#fff4f0] px-4 py-3 text-xs text-[#a25c4c]">{params.error}</p>}
       {params.confirmed && <p role="status" className="mt-4 rounded-lg border border-[#dce7dc] bg-[#f4f8f2] px-4 py-3 text-xs text-[#5d785d]">User email confirmed. They can now sign in with their existing credentials.</p>}
-      {!adminConfigured && <div role="status" className="mt-5 rounded-xl border border-[#eadfc7] bg-[#fbf6eb] p-4 text-xs leading-5 text-[#806641]">Pending-account approval is not configured. Add the server-only <code>SUPABASE_SERVICE_ROLE_KEY</code> to <code>.env.local</code>, then restart the app. Never prefix this key with <code>NEXT_PUBLIC_</code>.</div>}
+      {!adminConfigured && <div role="status" className="mt-5 rounded-xl border border-[#eadfc7] bg-[#fbf6eb] p-4 text-xs leading-5 text-[#806641]">Email confirmation for unverified password accounts is unavailable. To enable it, add the server-only <code>SUPABASE_SERVICE_ROLE_KEY</code> to <code>.env.local</code>, then restart the app. Never prefix this key with <code>NEXT_PUBLIC_</code>.</div>}
       {adminConfigured && <section className="mt-5 overflow-hidden rounded-xl border border-[#e9e6de] bg-[#fbfaf6]">
         <div className="border-b border-[#eeece5] px-5 py-4"><h2 className="text-sm font-semibold text-[#27364b]">Pending account confirmations</h2><p className="mt-1 text-[10px] text-[#939ba3]">{pendingUsers.length} unconfirmed {pendingUsers.length === 1 ? "account" : "accounts"}</p></div>
         <div className="divide-y divide-[#eeece5]">
@@ -61,15 +63,30 @@ export default async function UsersPage({ searchParams }: PageProps<"/dashboard/
           {!pendingUsers.length && <div className="px-5 py-8 text-center text-xs text-[#929aa1]">No pending account confirmations.</div>}
         </div>
       </section>}
-      <div className="mt-5 overflow-hidden rounded-xl border border-[#e9e6de] bg-[#fbfaf6]">
-        <div className="border-b border-[#eeece5] px-5 py-4"><h2 className="text-sm font-semibold text-[#27364b]">Registered profiles</h2><p className="mt-1 text-[10px] text-[#939ba3]">{profiles.length} accounts</p></div>
+      <section className="mt-5 overflow-hidden rounded-xl border border-[#e9e6de] bg-[#fbfaf6]">
+        <div className="border-b border-[#eeece5] px-5 py-4"><h2 className="text-sm font-semibold text-[#27364b]">Awaiting staff approval</h2><p className="mt-1 text-[10px] text-[#939ba3]">Google registrations start as Guest; only a super admin can grant staff access.</p></div>
         <div className="divide-y divide-[#eeece5]">
-          {profiles.map((profile) => <div key={profile.id} className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center">
+          {guestProfiles.map((profile) => <div key={profile.id} className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f4ead7] text-[#9b7741]"><UserRoundCog size={16} /></span>
+            <div className="min-w-0 flex-1"><p className="truncate text-xs font-semibold text-[#344258]">{profile.full_name || "Unnamed account"}</p><p className="mt-1 truncate text-[10px] text-[#8b949e]">{profile.email} · Registered {formatDate(profile.created_at)}</p></div>
+            <form action={assignRole} className="flex flex-wrap gap-2">
+              <input type="hidden" name="user_id" value={profile.id} />
+              <button name="role" value="admin" className="inline-flex h-9 items-center justify-center gap-2 rounded-lg bg-[#17243b] px-3 text-[10px] font-semibold text-white hover:bg-[#293b57]"><CheckCircle2 size={13} /> Approve as admin</button>
+              <button name="role" value="super_admin" className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-[#d9d4c8] px-3 text-[10px] font-semibold text-[#51677f] hover:bg-[#f1efe8]"><ShieldCheck size={13} /> Appoint super admin</button>
+            </form>
+          </div>)}
+          {!guestProfiles.length && <div className="px-5 py-8 text-center text-xs text-[#929aa1]">No accounts are waiting for staff approval.</div>}
+        </div>
+      </section>
+      <div className="mt-5 overflow-hidden rounded-xl border border-[#e9e6de] bg-[#fbfaf6]">
+        <div className="border-b border-[#eeece5] px-5 py-4"><h2 className="text-sm font-semibold text-[#27364b]">Staff roles</h2><p className="mt-1 text-[10px] text-[#939ba3]">{staffProfiles.length} staff accounts · Existing super admin roles are protected from changes here.</p></div>
+        <div className="divide-y divide-[#eeece5]">
+          {staffProfiles.map((profile) => <div key={profile.id} className="flex flex-col gap-3 px-5 py-4 sm:flex-row sm:items-center">
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#e8dfcb] text-xs font-bold text-[#5b503e]"><UserRoundCog size={16} /></span>
             <div className="min-w-0 flex-1"><p className="truncate text-xs font-semibold text-[#344258]">{profile.full_name || "Unnamed account"}</p><p className="mt-1 truncate text-[10px] text-[#8b949e]">{profile.email} · Joined {formatDate(profile.created_at)}</p></div>
-            {profile.role === "super_admin" ? <span className="rounded-full bg-[#e8edf4] px-3 py-1.5 text-[9px] font-semibold text-[#51677f]">Super admin</span> : <form action={assignRole} className="flex items-center gap-2"><input type="hidden" name="user_id" value={profile.id} /><select name="role" defaultValue={profile.role} aria-label={`Role for ${profile.email}`} className="h-8 rounded-md border border-[#e5e2da] bg-white px-2 text-[10px] capitalize"><option value="guest">Guest</option><option value="admin">Admin</option></select><button className="h-8 rounded-md bg-[#17243b] px-3 text-[10px] font-semibold text-white">Save</button></form>}
+            {profile.role === "super_admin" ? <span className="rounded-full bg-[#e8edf4] px-3 py-1.5 text-[9px] font-semibold text-[#51677f]">Super admin</span> : <form action={assignRole} className="flex items-center gap-2"><input type="hidden" name="user_id" value={profile.id} /><select name="role" defaultValue={profile.role} aria-label={`Role for ${profile.email}`} className="h-8 rounded-md border border-[#e5e2da] bg-white px-2 text-[10px] capitalize"><option value="guest">Guest</option><option value="admin">Admin</option><option value="super_admin">Super admin</option></select><button className="h-8 rounded-md bg-[#17243b] px-3 text-[10px] font-semibold text-white">Save</button></form>}
           </div>)}
-          {!profiles.length && <div className="px-5 py-12 text-center text-xs text-[#929aa1]">No profiles found.</div>}
+          {!staffProfiles.length && <div className="px-5 py-12 text-center text-xs text-[#929aa1]">No staff accounts yet.</div>}
         </div>
       </div>
     </div>
